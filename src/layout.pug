@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+html(lang="en")
+  head
+    link(rel="stylesheet", href='fonts.css?v=' + version)
+
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    meta(name="apple-mobile-web-app-capable", content="yes")
+    meta(name="mobile-web-app-capable", content="yes")
+
+    block title
+
+    link(rel="stylesheet", href='vendors.css?v=' + version)
+    link(rel="stylesheet", href='main.css?v=' + version)
+
+    if (env === 'development')
+      script.
+        window.DEBUG = true;
+
+  body
+
+    block header
+
+    main
+      block content
+      
+    include ./components/footer/footer
+
+    script(src='runtime.js?v=' + version)
+    script(src='vendors.js?v=' + version)
+    script(src='main.js?v=' + version)

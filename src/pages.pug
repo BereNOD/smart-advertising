@@ -1,0 +1,41 @@
+extends layout
+
+include components/header/header
+
+block title
+  title Smart Advertising
+
+block header
+  +header()
+
+block content
+  style.
+    .pages {
+      margin: 16px auto 104px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .pages ul li {
+      margin: 1rem;
+    }
+
+    .pages ul li:before {
+      content: '•';
+      font-size: 2rem;
+    }
+
+    .pages .link {
+      padding: 1rem;
+      font-size: 1.5rem;
+      line-height: 1.4;
+    }
+  .pages.container
+    - const pages = {};
+    - pages["UI"] = "ui.html";
+
+    ul
+      each value, key in pages
+        li
+          a.link.link__active(href=value)= key
